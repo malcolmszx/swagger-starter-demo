@@ -1,0 +1,39 @@
+= spring-boot-starter-swagger
+
+
+[[_overview]]
+== 概览
+Starter for swagger 2.x
+
+
+=== 版本信息
+[%hardbreaks]
+__版本__ : 1.1.0.RELEASE
+
+
+=== 联系方式
+[%hardbreaks]
+__名字__ : didi
+__邮箱__ : dyc87112@qq.com
+
+
+=== 许可信息
+[%hardbreaks]
+__许可证__ : Apache License, Version 2.0
+__许可网址__ : https://www.apache.org/licenses/LICENSE-2.0.html
+__服务条款__ : https://github.com/dyc87112/spring-boot-starter-swagger
+
+
+=== URI scheme
+[%hardbreaks]
+__域名__ : localhost:8080
+__基础路径__ : /
+
+
+=== 标签
+
+* 公司系统管理 : Compay Controller
+* 用户管理 : User Controller
+
+
+

@@ -1,6 +1,8 @@
 package com.didispace.demo;
 
+import com.didispace.demo.entity.User;
 import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
 import org.springframework.web.bind.annotation.*;
@@ -14,13 +16,15 @@ import java.util.List;
 @RestController
 public class UserController {
 
-    @ApiOperation("创建用户")
+    @ApiOperation(value = "创建用户")
+    @ApiImplicitParam(name = "user", value = "用户详细实体user", required = true ,dataType = "Json")
     @PostMapping("/users")
     public User create(@RequestBody @Valid User user) {
         return user;
     }
 
-    @ApiOperation("用户详情")
+    @ApiOperation(value = "用户详情")
+    @ApiImplicitParam(name = "id", example = "123",value = "用户Id", required = true, dataType = "Long")
     @GetMapping("/users/{id}")
     public User findById(@PathVariable Long id) {
         return new User("bbb", 21, "上海", "aaa@bbb.com");

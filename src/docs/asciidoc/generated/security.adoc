@@ -1,0 +1,13 @@
+
+[[_securityscheme]]
+== 安全
+
+[[_authorization]]
+=== Authorization
+[%hardbreaks]
+__类型__ : apiKey
+__名称__ : TOKEN
+__在__ : HEADER
+
+
+

@@ -1,0 +1,350 @@
+
+[[_paths]]
+== 资源
+
+[[_454449a42fa30ef32e77735a6c568d0c]]
+=== 公司系统管理
+Compay Controller
+
+
+[[_createusingpost]]
+==== 创建系统
+....
+POST /compay
+....
+
+
+===== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Header**|**access_token** +
+__必填__|user access token|string
+|**Header**|**timestamp** +
+__可选__|access timestamp|integer (int32)
+|**Body**|**compay** +
+__必填__|用户详细实体user|string
+|===
+
+
+===== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_4a189be3a6ef026b83c37b9e38e9c56e,系统基本信息>>
+|**201**|Created|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+===== 消耗
+
+* `application/json`
+
+
+===== 生成
+
+* `*/*`
+
+
+===== 安全
+
+[options="header", cols=".^3,.^4,.^13"]
+|===
+|类型|名称|作用域
+|**apiKey**|**<<_authorization,Authorization>>**|global
+|===
+
+
+===== HTTP请求示例
+
+====== 请求 path
+----
+/compay
+----
+
+
+====== 请求 header
+[source,json]
+----
+0
+----
+
+
+====== 请求 body
+[source,json]
+----
+{ }
+----
+
+
+===== HTTP响应示例
+
+====== 响应 200
+[source,json]
+----
+{
+  "address" : "string",
+  "age" : 23,
+  "compayName" : "string",
+  "email" : "string"
+}
+----
+
+
+[[_7d023d072627d0ad0df10e5da8fdfeaa]]
+=== 用户管理
+User Controller
+
+
+[[_createusingpost_1]]
+==== 创建用户
+....
+POST /users
+....
+
+
+===== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Header**|**access_token** +
+__必填__|user access token|string
+|**Header**|**timestamp** +
+__可选__|access timestamp|integer (int32)
+|**Body**|**user** +
+__必填__|用户详细实体user|<<_json,Json>>
+|===
+
+
+===== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_f27103dead187fe6c304ecd07f70768d,用户基本信息>>
+|**201**|Created|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+===== 消耗
+
+* `application/json`
+
+
+===== 生成
+
+* `*/*`
+
+
+===== 安全
+
+[options="header", cols=".^3,.^4,.^13"]
+|===
+|类型|名称|作用域
+|**apiKey**|**<<_authorization,Authorization>>**|global
+|===
+
+
+===== HTTP请求示例
+
+====== 请求 path
+----
+/users
+----
+
+
+====== 请求 header
+[source,json]
+----
+0
+----
+
+
+===== HTTP响应示例
+
+====== 响应 200
+[source,json]
+----
+{
+  "address" : "string",
+  "age" : 45,
+  "email" : "string",
+  "name" : "string"
+}
+----
+
+
+[[_listusingget]]
+==== 用户列表
+....
+GET /users
+....
+
+
+===== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Header**|**access_token** +
+__必填__|user access token|string
+|**Header**|**timestamp** +
+__可选__|access timestamp|integer (int32)
+|**Query**|**pageIndex** +
+__可选__|查看第几页|integer (int32)
+|**Query**|**pageSize** +
+__可选__|每页多少条|integer (int32)
+|===
+
+
+===== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|< <<_f27103dead187fe6c304ecd07f70768d,用户基本信息>> > array
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+===== 生成
+
+* `*/*`
+
+
+===== 安全
+
+[options="header", cols=".^3,.^4,.^13"]
+|===
+|类型|名称|作用域
+|**apiKey**|**<<_authorization,Authorization>>**|global
+|===
+
+
+===== HTTP请求示例
+
+====== 请求 path
+----
+/users
+----
+
+
+====== 请求 header
+[source,json]
+----
+0
+----
+
+
+====== 请求 query
+[source,json]
+----
+{
+  "pageIndex" : 0,
+  "pageSize" : 0
+}
+----
+
+
+===== HTTP响应示例
+
+====== 响应 200
+[source,json]
+----
+[ {
+  "address" : "string",
+  "age" : 45,
+  "email" : "string",
+  "name" : "string"
+} ]
+----
+
+
+[[_findbyidusingget]]
+==== 用户详情
+....
+GET /users/{id}
+....
+
+
+===== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Header**|**access_token** +
+__必填__|user access token|string
+|**Header**|**timestamp** +
+__可选__|access timestamp|integer (int32)
+|**Path**|**id** +
+__必填__|用户Id|integer (int64)
+|===
+
+
+===== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_f27103dead187fe6c304ecd07f70768d,用户基本信息>>
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+===== 生成
+
+* `*/*`
+
+
+===== 安全
+
+[options="header", cols=".^3,.^4,.^13"]
+|===
+|类型|名称|作用域
+|**apiKey**|**<<_authorization,Authorization>>**|global
+|===
+
+
+===== HTTP请求示例
+
+====== 请求 path
+----
+/users/123
+----
+
+
+====== 请求 header
+[source,json]
+----
+0
+----
+
+
+===== HTTP响应示例
+
+====== 响应 200
+[source,json]
+----
+{
+  "address" : "string",
+  "age" : 45,
+  "email" : "string",
+  "name" : "string"
+}
+----
+
+
+

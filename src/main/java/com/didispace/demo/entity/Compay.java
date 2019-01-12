@@ -1,4 +1,4 @@
-package com.didispace.demo;
+package com.didispace.demo.entity;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -8,21 +8,27 @@ import lombok.NoArgsConstructor;
 
 import javax.validation.constraints.*;
 
+
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@ApiModel("用户基本信息")
-public class User {
+@ApiModel("系统基本信息")
+public class Compay {
 
-    @ApiModelProperty("姓名")
+    @ApiModelProperty("系统名称")
     @Size(max = 20)
-    private String name;
-    @ApiModelProperty("年龄")
+    private String compayName;
+
+    @ApiModelProperty(value = "年限" ,example = "23")
     @Max(150)
     @Min(1)
     private Integer age;
+
+    @ApiModelProperty("公司地址")
     @NotNull
     private String address;
+
+    @ApiModelProperty("电子邮件")
     @Pattern(regexp = "^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\\.[a-zA-Z0-9_-]+)+$")
     private String email;
 
